@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const math = require("mathjs")
 
-
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
@@ -27,7 +26,7 @@ app.post('/addGame', async (req, res, next) =>
 	
 });
 
-app.post('/viewProfile', async (req, res, next) =>
+app.get('/viewProfile', async (req, res, next) =>
 {
   let error = '';
 
@@ -71,3 +70,8 @@ app.listen(PORT, () =>
 {
   console.log('Server listening on port ' + PORT);
 });
+router.get("/getFriends", (req, res) => {
+    res.send("NO FRIENDS");
+});
+
+module.exports = router;
