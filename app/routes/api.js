@@ -19,6 +19,12 @@ const url = process.env.MONGODB_URI;
 const client = new MongoClient(url);
 client.connect();
 
+router.get("/getFriends", (req, res) => {
+    res.send("NO FRIENDS");
+});
+
+module.exports = router;
+
 app.post('/addGame', async (req, res, next) =>
 {
   // incoming: discordID, gameID, name, level, rank, position
